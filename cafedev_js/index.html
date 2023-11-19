@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cafedev</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- rajout de la police et des icones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f9d009cb2a.js" crossorigin="anonymous"></script>
+  </head>
+
+
+  <body>
+    <!-- <nav>
+      <div class="navBar">
+          <div class="burger"></div>
+          <div class="choixBar">
+              <a href="#accueil" class="accueilButton">A</a>
+              <a href="#inventaire" class="inventaireButton">I</a>
+          </div>
+      </div>
+    </nav> -->
+
+    <!-- section Navbar -->
+    <nav>
+      <ul>
+        <li>
+          <a href="#accueil" class="logo">
+            <img src="images/sunjava.png" alt="logo"/>
+            <span class="navItem">Cafédev</span>
+          </a>
+        </li>
+        <li>
+          <a href="#accueil">
+            <i class="fa-solid fa-house" style="color: #001952;"></i>
+            <span class="navItem">Accueil</span>
+          </a>
+        </li>
+        <li>
+          <a href="#inventaire">
+            <i class="fa-solid fa-right-to-bracket" style="color: #001952;"></i>
+            <span class="navItem">Entrée de produits</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="#productRelease">
+            <i class="fa-solid fa-right-from-bracket" style="color: #001952;"></i>
+            <span class="navItem">Sortie des produits</span>
+          </a>
+        </li> -->
+        <li>
+          <a href="#inferieur">
+            <i class="fa-brands fa-stack-overflow" style="color: #001952;"></i>
+            <span class="navItem">Gestion du stock</span>
+          </a>
+        </li>
+        <li>
+          <a href="#analytics">
+            <i class="fa-solid fa-chart-pie" style="color: #001952;"></i>
+            <span class="navItem">Analyses</span>
+          </a>
+        </li>
+        <li>
+          <a href="#setting">
+            <i class="fa-solid fa-gear" style="color: #001952;"></i>
+            <span class="navItem">Setting</span>
+          </a>
+        </li>
+        <li>
+          <a href="#credit">
+            <i class="fa-solid fa-circle-question" style="color: #001952;"></i>
+          <span class="navItem">Crédits</span>
+          </a>
+        </li>
+      </ul>
+  </nav>
+
+  <!-- page home -->
+
+    <header id="accueil" class="parent">
+      <div class="headerImageCafe">
+        <div class="headerOpacity">
+          <h2 class ="headerTitre"> Cafédev</h2>
+        </div>
+      </div>
+      <!-- <img src="./images/Capture d’écran 2023-09-26 à 21.25.18.png" alt=""> -->
+    </header>
+
+<!-- page etat du stock -->
+
+    <section id="inventaire" class="parent">
+      <!-- zone superieur ( ajout / filtre / modif ) -->
+      <div class="section">
+        <div class="superieur">
+            <div class="titre">
+              <h2>Entrée de Produits</h2>
+            </div>
+
+            <form action="" id="addProductForm" class="addProductForm">
+                <div class="champDeSaisie" >
+                    <select id="type" class="type formChamp" required>
+                        <option value="choix">-- type de produit --</option>
+                        <option value="aliment">Aliment</option>
+                        <option value="soft">Boisson non alcoolisée</option>
+                        <option value="alcool">Boisson alcoolisée</option>
+                    </select>
+
+                    <input type="text" name="nom" class="formChamp" id="nom" placeholder="nom du produit" required>
+                    <input type="number" name="tauxAlcool" class="formChamp" id="quantite"  placeholder="quantité de produit" required>
+                    <input type="number" name="degreAlcool" class="formChamp" id="degreAlcool" step="0.01"  placeholder="alcool %"> <!-- id modifier -->
+                   
+                    <input type="number" name="prixAchatHt" class="formChamp" id="prixAchatHt"  step="0.01" placeholder="prix achat HT" required>
+                    <input type="number" name="prixVenteHt" class="formChamp" id="prixVenteHt"  step="0.01" placeholder="prix vente HT" required>
+                    
+                    <!-- <div class="prixVenteTTC formChamp" id="prixVenteTTC">ttc</div>
+                    <div class="margeHT formChamp" id="margeHT">marge</div> -->
+
+                </div>
+                
+                <div class="bu">
+                    <button id="boutonAjouter" class="boutonAjouter" type="submit" >Ajouter</button>
+                </div>
+                
+            </form>
+        </div>
+
+        <!-- zone inferieur ( affichage ) -->
+        <div class="inferieur" id="inferieur">
+          <div class="titre">
+            <h2>Gestion du stock</h2>
+          </div>
+          <!-- bouton fitre / supprimer filtre -->
+
+          <div class="filtreParent" id="filtreParent">
+            <div class="filtreBouton">
+              <button id="filtre" class="filtre">filtre</button>
+            </div>
+
+            <div class="supprimerFiltre">
+              <button class="supprimer" id="supprimer">supprimer filtre</button>
+            </div>
+          </div>
+
+          <div class="filtreParametre" id="filtreParametre">
+            <input type="text" name="valeurParametreFiltre" class="valeurParametreFiltre" id="valeurParametreFiltre" placeholder="valeur à filtrer">
+          </div>
+
+          <div class="affichage" id="affichage">
+
+            <!-- prototype affichage -->
+           <!--  <div class="affichagePrototype">
+
+              <div class="prototypeText identifiantProduit prototypeType">
+                <p>type</p>
+              </div>
+
+              <div class="prototypeText valeurProduit prototypeNom">
+                <p>nom</p>
+              </div>
+
+              <div class="prototypeText valeurProduit protitypeQuantite">
+                <p>quantité</p>
+              </div>
+
+              <div class="prototypeText valeurProduit prototypePourcentage">
+                <p>%</p>
+              </div>
+
+              <div class="prototypeText valeurProduit prototypeAchat">
+                <p>achat ht</p>
+              </div>
+
+              <div class="prototypeText valeurProduit prototypeVente">
+                <p>vente ht</p>
+              </div>
+
+              <div class="prototypeText boutonListe prototypeTTC">
+                <p>ttc</p>
+              </div>
+
+              <div class="prototypeText boutonListe prototypeMarg">
+                <p>marge</p>
+              </div>
+ -->
+              <!-- bouton modifier et supprimer -->
+<!--               <div class="prototypeText prototypeModif">
+                <button id="modifierBouton">modif</button>
+              </div>
+              <div class="prototypeText prototypeSup">
+                <button id="supprimerBouton"> x</button>
+              </div>
+
+
+            </div> -->
+
+            <!-- zone affichage avec / sans  filtre-->
+            <div id="productList" class="productList"></div>
+
+          </div>
+
+        </div>
+    </div>
+    </section>
+
+      <!-- modifier -->
+
+    <section class="modifSection">
+      <div class="section">
+        <div class="superieur cardModif">
+          <div class="titre">
+            <h2>Modifications des Produits</h2>
+          </div>
+
+
+          <form id="modifyForm" class="modifyForm">
+
+            <div class="alpha">
+              <div class="alphaDiv">
+                <label for="nomModif">Nom :</label>
+                <input  id="nomModif" class="nomModif" />
+              </div>
+  
+              <div class="alphaDiv">
+                <label for="quantite-modif">Quantité :</label>
+                <input type="number" id="quantiteModif" required />
+              </div>
+  
+              <div class="alphaDiv">
+                <label for="prix-achat-ht-modif">Prix d'Achat HT (€) :</label>
+                <input type="number" id="prixAchatHtModif" step="0.01" required />
+              </div>
+  
+              <div class="alphaDiv">
+                <label for="prix-vente-ht-modif">Prix de Vente HT (€) :</label>
+                <input type="number" id="prixVenteHtModif" step="0.01" required />
+              </div>
+  
+              <div class="alphaDiv">
+                <label for="type-modif">Type :</label>
+                <select id="typemodif" required>
+                  <option value="Aliment">Aliment</option>
+                  <option value="Boisson non alcoolisée">Boisson non alcoolisée</option>
+                  <option value="Boisson alcoolisée">Boisson alcoolisée</option>
+                </select>
+              </div>
+  
+              <div class="alphaDiv">
+                <label for="degre-alcool-modif">Degré d'Alcool (%) :</label>
+                <input type="number" id="degreAlcoolModif" step="0.01" />
+              </div>
+            </div>
+
+            <div class="beta">
+              <button  onclick="modifierProduit()" class="betaBouton"> <!-- type="button" -->
+                Enregistrer les Modifications
+              </button>
+            </div>
+
+          </form>
+          
+      </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer" id="credit">
+        <div class="footerTitre">
+          <h5>Bocal academy 2023 : Atelier café de la place</h5>
+          <!-- <p>Développé par : </p> -->
+        </div>
+        <div class="devweb">Développé par :</div>
+      
+        <div class="developpeurDiv">
+          <div class="developpeur">veronique</div>
+          <div class="developpeur">luc</div>
+          <div class="developpeur">louis</div>
+          <div class="developpeur">sergio</div>
+        </div>
+      </div>
+
+
+    </footer>
+
+    <!-- page statut : section modification  -->
+
+
+
+<!-- test a la con 5s -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>

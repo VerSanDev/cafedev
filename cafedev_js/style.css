@@ -1,0 +1,627 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+/* upgrade de l'initial et du body2 */
+/*----------------> "Body" <-----------------*/
+body{
+    background-color: #0A0F27;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+
+}
+/*----------------> "Navbar" <-----------------*/
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 90px;
+    background: #FCF6F3;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+a{
+    display: table;
+    font-size: 14px;
+    padding: 8%;
+    width: 300px;
+    padding: 10px;
+}
+
+i {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: relative;
+    margin: 10px 0 0 10px;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-left: 15px;
+    color: #001952;
+    font-weight: bold;
+}
+
+.navItem {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+    color: #001952
+}
+
+a:hover{
+    background: #0085FF;
+    color: #FCF6F3;
+}
+
+nav:hover{
+    transition: all 0.5s ease;
+    width: 300px;
+}
+
+
+/*----------------> page "Accueil" <-----------------*/
+.headerImageCafe{    
+    height: 100vh;
+    background-image: url("./images/cafeHome.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headerOpacity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rgba(0, 133, 255, 0.2);
+}
+
+.headerTitre{
+    font-size: 25vh;
+    color:#FCF6F3;
+}
+/* img{
+    filter: brightness(40%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 85%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0; 
+{ */
+
+/* h1{
+    z-index: 1;
+    color: white;
+    font-size: 140px;
+    text-transform: uppercase;
+} */
+
+/*----------------> page "statuts des stocks" <-----------------*/
+/* general */
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+}
+.section{
+    height: 100%;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.parent{
+    width: 100%;
+}
+
+/*inférieur + supérieuse */
+
+.superieur,
+.inferieur{
+    width: 90%;
+    height: 30%;
+/*     opacity: 0.1; */
+    background-color: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
+
+
+/*superieur section*/
+.superieur{
+    display: flex;
+    flex-direction: column;
+}
+#addProductForm{
+    display: flex;
+    flex-direction: row;
+}
+.titre{
+    height: 20%;
+    width: 100%;
+
+}
+
+.titre h2{
+    color: white;
+    text-transform: uppercase;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+}
+.addProductForm{
+    height: 80%;
+    width: 100%;
+}
+.champDeSaisie {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1%;
+}
+
+.formChamp{
+    width: calc(100% / 5);
+    height: 20%;
+    background-color: rgba(255, 255, 255, 0);
+    color: gray;
+    border: none;
+    border-bottom: 2px solid black;
+}
+.formChamp::placeholder{
+    color: chartreuse;
+}
+
+.bu {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boutonAjouter{
+    height: 20%;
+    width: 80%;
+    border-radius: 15px;
+    background-color: #FCF6F3;
+    color: #001952;
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+/* inferieur section */
+.inferieur{
+    height: 64%;
+    display: flex;
+    flex-direction: column;
+}
+.filtreParent{
+    height: 10%;
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    padding: 2% 0;
+    align-items: center;
+    justify-content: center;
+}
+.filtreBouton,
+.supprimerFiltre{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.filtre,
+.supprimer{
+    width: 90%;
+    /* height: 70%; */
+    border-radius: 15px;
+    font-size: large;
+    background-color: #FCF6F3;
+    color: #001952;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.filtreParametre{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.valeurParametreFiltre{
+    width: 80%;
+    /* height: 80%; */
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: rgba(255, 255, 255, 0);
+    color: #FCF6F3;
+}
+.valeurParametreFiltre::placeholder{
+    color: chartreuse;
+}
+.affichage{
+    height: 102%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.affichagePrototype{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* inferieur : prototypesuivi */
+.prototypeType,
+.prototypeNom{
+    width: 15%;
+}
+.protitypeQuantite,
+.prototypePourcentage,
+.prototypeAchat,
+.prototypeVente,
+.prototypeTTC,
+.prototypeMarge,
+.prototypeModif,
+.prototypeSup{
+    width: calc(70% / 8);
+}
+
+.prototypeModif,
+.prototypeSup{
+    width: calc(45% / 8);
+}
+.prototypeText p{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productList{
+    height: 80%;
+    width: 100%;
+}
+.prototypeText{
+    background-color: #001952;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: #001952;
+}
+.prototypeText button{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 8px;
+    color: #FCF6F3;
+}
+
+.productList{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 8%;
+    padding: 20px 50px;
+    justify-content: flex-start;
+}
+
+.productList div{
+    height: 100%;
+    width: 45%;
+    background-color: #FCF6F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+
+.productList div div{
+    width: 100%;
+    display: flex;
+}
+
+
+.productList div p span {
+    color: #0085FF;
+}
+
+.productList div div div span{
+    height: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+
+.productList div div div span button{
+    width: 45%;
+    height: 80%;
+    border-radius: 15px;
+}
+
+.productList h2{
+    color: #001952;
+    font-weight: bold;
+    margin: 0.5% 0;
+}
+
+
+/* page statut : zone affichage avec / sans filtre */
+.productList {
+    color : #001952;
+}
+
+/* page statut : section modification */
+.modifyForm {
+    color: #FCF6F3;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+.alpha{
+    width: 80%;
+    height: 100%;
+}
+.beta{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nomModif,
+#quantiteModif,
+#prixAchatHtModif,
+#prixVenteHtModif,
+#typemodif,
+#degreAlcoolModif
+ {
+    border-radius: 5px;
+}
+
+/* modif section */
+
+.modifSection{
+    width: 100%;
+    height: 90vh;
+}
+.alphaDiv{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alphaDiv label {
+    width: 30%;
+    height: 90%;
+}
+.alphaDiv input,
+.alphaDiv select{
+    height: 90%;
+    width: 30%;
+    color: #FCF6F3;
+    background-color: rgb(255 255 255 / 0.1);
+}
+.betaBouton{
+    height: 50%;
+    width: 85%;
+    border-radius: 15px;
+    background-color: #FCF6F3;
+    color: #001952;
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+footer{
+    height: 10vh;
+    width: 100%;
+    background-color: #FCF6F3;
+}
+.footer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.footerTitre{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: large;
+    color: #001952;
+    font-weight: bold;
+}
+.developpeurDiv{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    padding: 0 25%;
+    flex-direction: row;
+}
+.developpeur{
+    color: #001952;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    text-transform: uppercase;
+}
+.devweb {
+    text-align: center;
+}
+
+/* test a la con3.5 */
+
+
+@media (max-width: 360px) {
+    
+    nav{
+        display: none;
+    }
+    .parent{
+        width: 100%;
+    }
+    header img {
+        display: none;
+    }
+    h1{
+      font-size: 40px;  
+    }
+
+    section{
+        height: 200vh;
+    }
+    .superieur,
+    .inferieur{
+        height: 45%;
+    }
+    .addProductForm{
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        flex-wrap: wrap;
+    }
+    .formChamp {
+        height: 10%;
+        width: 90%;
+    }
+    .titre{
+        height: 10%;
+    }
+    .champDeSaisie{
+        height: 90%;
+        width: 100%;
+    }
+    .bu {
+        height: 10%;
+        width: 100%;
+    }
+    .boutonAjouter{
+        height: 65%;
+    }
+    .affichagePrototype{
+        display: none;
+    }
+    .section{
+        width: 100%;
+    }
+    .product h2{
+        padding: 0 4%;
+    }
+    .productList div div div span button{
+        height: 50%;
+    }
+    .productList{
+        height: 90%;
+        padding: 20px 15px;
+    }
+    .productList div{
+        width: 100%;
+        align-items: flex-start;
+    }
+    .cardModif{
+       height: 90%;
+
+    }
+    .modifyForm{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .cardModif .titre h2{
+        font-size: large;
+    }
+    .alpha{
+        height: 90%;
+        width: 100%;
+    }
+    .alphaDiv{
+        height: 16%;
+    }
+    .alphaDiv label,
+    .alphaDiv input,
+    .alphaDiv select{
+        width: 45%;
+    }
+    .beta{
+        height: 10%;
+        width: 100%;
+    }
+    .betaBouton{
+        height: 65%;
+        font-size: small;
+    }
+    .footerTitre{
+        font-size: x-large;
+    }
+    .developpeur{
+        font-size: small;
+    }
+}
